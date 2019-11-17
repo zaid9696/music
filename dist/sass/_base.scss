@@ -1,0 +1,75 @@
+$color-primary: #001b3a;
+$color-secondary: #fe0061;
+
+@import url('https://fonts.googleapis.com/css?family=Barlow+Condensed:300,400,500,600&display=swap');
+
+$bp-largest:800px;
+$bp-small:558px;
+
+*,
+*::before,
+*::after{
+    padding:0;
+    margin:0;
+    box-sizing: inherit;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%; // 1rem = 10px;
+    font-family: 'Barlow Condensed', sans-serif;
+    // 7734ea
+    // 00a7ea
+
+    @media only screen and (max-width: $bp-largest){
+        font-size: 50%;
+    }
+}
+
+
+body{
+
+    background-image: linear-gradient(to right bottom,#7734ea,#00a7ea,#7734ea,#00a7ea);
+    animation: animate 10s ease-in-out infinite;
+    background-size: 400% 400%;
+    width: 100%;
+}
+
+@keyframes animate{
+
+    0%{
+
+        background-position: 0 50%;
+
+    }
+
+    50%{
+
+        background-position: 100% 50%;
+    }
+
+    100%{
+
+        background-position: 0 50%;
+    }
+
+}
+
+.container{
+    display: grid;
+    grid-template-rows: repeat(3,min-content);
+    grid-template-columns: [full-start] 1fr  [center-start] repeat(8, [col-start] minmax(min-content, 15rem)[col-end]) [center-end] 1fr [full-end];
+
+}
+
+::selection{
+
+    background-color: $color-secondary;
+    color: #fff;
+}
+
+.loader{
+
+    text-align: center;
+
+}
